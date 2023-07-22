@@ -3,31 +3,31 @@ var inputData = require('fs').readFileSync(filepath).toString().split('\n');
 
 //방법2 내장함수 sort사용 -> 12회
 var num = Number(inputData.shift());
-var arr = [];
+var arr 
+(arr= []).length = num;
 for(var i=0; i<num; i++){
-    arr.push(inputData[i].split(" ").map(Number))
+    arr[i] = inputData[i].split(" ").map(Number)
 }
 var cnt=0;
-
 console.log(arr);
 
 var result ="";
 //2차원 배열 정렬 
 arr.sort((a, b)=>{
-    if (a[0]==b[0]){
-        cnt++;
-        return a[1] -b[1]
+    if (a[0]==b[0]){ //x축이 같다면
+        return a[1]-b[1] //y축 비교한거 리턴 
     } else {
-        cnt++;
-        return a[0]-b[0]
+        return a[0]-b[0] //x축 비교한거 리턴
     }
 }).forEach((e)=>{
     result += e[0]+" "+e[1]+"\n";
 })
 
-
 console.log(result.substring(0, result.length -1)); //마지막 개행 제거
 console.log(cnt);
+
+
+
 
 //방법1 -> 버블정렬 
 /*
@@ -51,7 +51,7 @@ for(var i=0; i<num; i++){
 }
 
 var result = "";
-arr.forEach((val, i)=>{
+ar,r.forEach((val, i)=>{
     result += val[0]+" "+val[1];
     if(i!=arr.length-1) result += "\n";
 });
